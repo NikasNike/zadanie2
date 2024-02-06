@@ -1,17 +1,5 @@
 import java.util.Scanner;
 
-public class TOYZ {
-    Scanner in = new Scanner(System.in);
-    System.out.print("Введите ID или название игрушки: ");
-    String name = in.nextLine();
-    int [][] twoDimArray = new int[5][];
-
-    //id
-    //name
-    //kolichestvo
-    //chance
-}
-
 public class addDrop(
 Scanner in = new Scanner(System.in);System.out.print("Введите название игрушки: ");
 String name = in.nextLine();
