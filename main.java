@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 class main {
     public static void main(String[] args) {
-        int[][] ToyzArray = new int[10][];
+        String[][] ToyzArray = new String[10][4];
         String command = "null";
         while (command == "null") {
             Scanner in = new Scanner(System.in);
@@ -38,10 +38,11 @@ class main {
                 case ("add"):
                     add add = new add(ToyzArray);
                     String i1 = in.nextLine();
-                    for (int i = 0; i < ToyzArray.length; i++) {
-                        for (int j = 0; j < ToyzArray[0].length; j++) {
-                            System.out.println(ToyzArray[i][j]);
+                    for (int i = 0; i < ToyzArray.length - 1; i++) {
+                        for (int j = 0; j < 3; j++) {
+                            System.out.print(ToyzArray[i][j]);
                         }
+                        System.out.println();
                     }
                     break;
 
