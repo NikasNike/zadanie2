@@ -62,40 +62,38 @@ class add {
                     } catch (NumberFormatException e) {
                         System.out.println(e.getMessage());
                     }
-
                 }
             } else if (ToyzArray[i][0].equals(name) == true || ToyzArray[i][1].equals(name) == true) {
                 System.out.println("Игрушка есть в списке");
-                if (ToyzArray[i][2] == "5") {
-                    break;
-                } else {
-                    Scanner in1 = new Scanner(System.in);
-                    System.out.print("количество которое будет в розыгрыше (до 5шт в розыгрыше): ");
-                    String kolichestvo = in1.nextLine();
-                    int x = 0;
-                    while (x == 0) {
-                        if (Integer.parseInt(kolichestvo) >= 5) {
-                            try {
-                                ToyzArray[i][2] = "5";
-                                x = 1;
-                                break;
-                            } catch (NumberFormatException e) {
-                                System.out.println("Неккоретное значение");
-                            }
-                        } else {
-                            x = 1;
-                            ToyzArray[i][2] = kolichestvo;
-                        }
-
+                Scanner in1 = new Scanner(System.in);
+                System.out.print("количество которое будет в розыгрыше (до 5шт в розыгрыше): ");
+                String kolichestvo = in1.nextLine();
+                if (Integer.parseInt(kolichestvo) >= 5) {
+                    try {
+                        ToyzArray[i][2] = "5";
+                    } catch (NumberFormatException e) {
+                        System.out.println("Неккоретное значение");
+                        ToyzArray[i][2] = "1";
                     }
+                } else {
+                    ToyzArray[i][2] = kolichestvo;
                 }
-                break;
-
+                Scanner in2 = new Scanner(System.in);
+                System.out.print("введите новый шанс (от 1 до 99): ");
+                String chance = in2.nextLine();
+                if (Integer.parseInt(chance) >= 99) {
+                    try {
+                        ToyzArray[i][3] = "99";
+                    } catch (NumberFormatException e) {
+                        System.out.println("Неккоретное значение");
+                        ToyzArray[i][3] = "10";
+                    }
+                } else {
+                    ToyzArray[i][3] = chance;
+                }
             }
         }
-
     }
-
 }
 
 // я ввожу данные, id он ищет если не находит то добвляет
