@@ -37,13 +37,6 @@ class main {
                     break;
                 case ("add"):
                     add add = new add(ToyzArray);
-                    // String i1 = in.nextLine();
-                    // for (int i = 0; i < ToyzArray.length; i++) {
-                    // for (int j = 0; j < 4; j++) {
-                    // System.out.print(ToyzArray[i][j]);
-                    // }
-                    // System.out.println();
-                    // }
                     break;
 
                 case ("play"):

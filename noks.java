@@ -17,12 +17,13 @@ public class noks {
                 int rand = (int) (Math.random() * 2);
                 if (rand == num) {
                     x = 1;
-                    System.out.print("Вы угадали число: ");
+                    System.out.print("Правильный ответ! ");
+                    System.out.print("");
                     ///////////////////////////////
                     int y = 0;
                     int[] mass = new int[10];
                     int rand1 = (int) (Math.random() * 99);
-                    System.out.println(rand1 + "вывод рандома");
+                    // System.out.println(rand1 + "вывод рандома");
                     for (int i = 0; i < ToyzArray.length; i++) {
                         if (ToyzArray[i][3] != null) {
                             if (Integer.parseInt(ToyzArray[i][3]) <= rand1 + 5
@@ -33,19 +34,24 @@ public class noks {
                         }
                     }
                     if (y == 0) {
-                        System.out.println("Вы ничего не выйграли");
+                        System.out.println("Увы, Вы ничего не выйграли :(");
                         break;
                     } else {
-                        if (Integer.parseInt(ToyzArray[y][2]) - 1 == 0) {
+                        int rand2 = (int) (Math.random() * y);
+                        int g = Integer.parseInt(ToyzArray[y - 1][2]);
+                        if (g - 1 == 0) {
+                            System.out.println("Вы выйграли: " + ToyzArray[y][1]);
+                            modify(ToyzArray[y][1]);
                             for (int i1 = 0; i1 < 4; i1++) {
                                 ToyzArray[y][i1] = null;
-                                System.out.println("Вы выйграли: " + ToyzArray[y][1]);
+
                             }
                         } else {
                             int sum = Integer.parseInt(ToyzArray[y][2]) - 1;
                             String sim = Integer.toString(sum);
                             ToyzArray[y][2] = sim;
                             System.out.println("Вы выйграли: " + ToyzArray[y][1]);
+                            modify(ToyzArray[y][1]);
                         }
 
                     }
